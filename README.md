@@ -2,6 +2,22 @@
 
 This is a [nanobind](https://github.com/wjakob/nanobind) example project featuring [astral-sh/uv](https://github.com/astral-sh/uv) workspace containing several interdependent `.whl` packages.
 
+## Goals
+
+* Figure out how a single `.whl` package can be split into multiple interdependent `.whl` packages.
+
+* Trigger rebuilding of C++ bindings on every `uv run` during development.
+
+## Gotchas
+
+* `uv sync editable.rebuild=true` still creates a temporary environment for the build dependencies, which breaks the incremental build. This can be prevented by `uv sync --no-build-isolation`, but requires additional `.venv` manipulations.
+
+  Workaround: `sync.{bat,sh}`.
+
+* `uv build` insistently creates a isolated build environment rather than reusing existing build artifacts. This can slow down large projects considerably. It also appears to fail with C++ dependencies in [UV workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces).
+
+  Workaround: `build.{bat,sh}`.
+
 ## Basic usage
 
 Build and run `test.py` example:
