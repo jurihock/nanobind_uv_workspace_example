@@ -4,16 +4,35 @@ This is a [nanobind](https://github.com/wjakob/nanobind) example project featuri
 
 ## Usage
 
-Build and run example:
+Build and run `test.py` example:
 
 ```
 sync.bat
 test.bat
 ```
 
-Build `.whl` files:
+Build `dist\*.whl` files:
 
 ```
 sync.bat
 build.bat
 ```
+
+## Dependencies
+
+C++:
+
+|C++ Library|Dependency|
+|-----------|----------|
+|`pet`||
+|`cat`|`pet`|
+|`dog`|`pet`|
+
+Python:
+
+|Python Library|Python Dependency|C++ Dependency|
+|--------------|-----------------|--------------|
+|`pypet`||`pet`|
+|`pycat`|`pypet`|`cat`|
+|`pydog`|`pypet`|`dog`|
+|`pypets`|`pypet` `pycat` `pydog`||
