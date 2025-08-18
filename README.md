@@ -1,6 +1,6 @@
 # nanobind_uv_workspace_example
 
-This is a [nanobind](https://github.com/wjakob/nanobind) example project featuring [uv](https://github.com/astral-sh/uv) workspace containing several interdependent `.whl` packages.
+This is a [nanobind](https://github.com/wjakob/nanobind) example project featuring [uv](https://github.com/astral-sh/uv) [workspace](https://docs.astral.sh/uv/concepts/projects/workspaces) containing several interdependent `.whl` packages.
 
 ## Goals
 
@@ -14,7 +14,7 @@ This is a [nanobind](https://github.com/wjakob/nanobind) example project featuri
 
   Workaround: `sync.{bat,sh}`.
 
-* `uv build` insistently creates an isolated build environment rather than reusing existing build artifacts. This can slow down large projects considerably. It also appears to fail with C++ dependencies in [UV workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces).
+* `uv build` insistently creates an isolated build environment rather than reusing existing build artifacts. This can slow down large projects considerably. It also appears to fail with C++ dependencies in UV workspaces.
 
   Workaround: `build.{bat,sh}`.
 
