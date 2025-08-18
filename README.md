@@ -2,20 +2,35 @@
 
 This is a [nanobind](https://github.com/wjakob/nanobind) example project featuring [astral-sh/uv](https://github.com/astral-sh/uv) workspace containing several interdependent `.whl` packages.
 
-## Usage
+## Basic usage
 
 Build and run `test.py` example:
 
 ```
-sync.bat
-test.bat
+sync.{bat,sh}
+test.{bat,sh}
 ```
 
 Build `dist\*.whl` files:
 
 ```
-sync.bat
-build.bat
+sync.{bat,sh}
+build.{bat,sh}
+```
+
+## Advanced usage
+
+Serve `dist\*.whl` files:
+
+```
+serve.{bat,sh}
+```
+
+Use served `dist\*.whl` files:
+
+```
+cd example
+uv run example.py
 ```
 
 ## Dependencies
