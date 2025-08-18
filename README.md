@@ -20,7 +20,7 @@ build.{bat,sh}
 
 ## Advanced usage
 
-Serve `dist\*.whl` files:
+Serve built `dist\*.whl` files:
 
 ```
 serve.{bat,sh}
