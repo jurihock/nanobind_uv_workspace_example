@@ -1,0 +1,14 @@
+.*/
+!.github/
+
+build*/
+dist/
+*.egg-info/
+
+__pycache__/
+*.py[cod]
+
+uv.lock
+
+.DS_Store
+Thumbs.db

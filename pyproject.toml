@@ -1,0 +1,17 @@
+[project]
+name = "pypets"
+version = "1"
+requires-python = ">=3.12"
+dependencies = ["pycat", "pydog", "pypet"]
+
+[tool.uv.sources]
+pypet = { workspace = true }
+pycat = { workspace = true }
+pydog = { workspace = true }
+
+[tool.uv.workspace]
+members = ["src/pycat", "src/pydog", "src/pypet"]
+
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"

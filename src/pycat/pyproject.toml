@@ -1,0 +1,15 @@
+[project]
+name = "pycat"
+version = "1"
+requires-python = ">=3.12"
+dependencies = ["pypet"]
+
+[build-system]
+requires = ["scikit-build-core>=0.11.5", "nanobind>=2.8.0"]
+build-backend = "scikit_build_core.build"
+
+[tool.scikit-build]
+build-dir = "../../build/pycat"
+cmake.build-type = "Release"
+cmake.source-dir = "."
+cmake.version = ">=3.30"

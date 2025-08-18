@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.30)
+
+project(cat LANGUAGES CXX)
+
+file(GLOB SRC "${CMAKE_CURRENT_LIST_DIR}/*.cpp")
+file(GLOB HDR "${CMAKE_CURRENT_LIST_DIR}/*.h")
+
+add_library(${PROJECT_NAME})
+
+target_sources(${PROJECT_NAME}
+  PRIVATE
+    "${SRC}"
+  PUBLIC
+    FILE_SET HEADERS
+    FILES "${HDR}"
+    BASE_DIRS "${CMAKE_CURRENT_LIST_DIR}/..")
+
+target_link_libraries(${PROJECT_NAME}
+  PUBLIC pet)
