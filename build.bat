@@ -1,11 +1,8 @@
 @echo off
 
-set requirements=build
+set requirements="uv_build>=0.8.11,<0.9.0" "scikit-build-core>=0.11.5" "nanobind>=2.8.0"
 
 uv venv --allow-existing
 uv pip install %requirements%
 
-uv run python -m build --wheel --no-isolation --outdir dist .
-uv run python -m build --wheel --no-isolation --outdir dist ./src/pycat
-uv run python -m build --wheel --no-isolation --outdir dist ./src/pydog
-uv run python -m build --wheel --no-isolation --outdir dist ./src/pypet
+uv build --verbose --no-build-isolation --all-packages --wheel
