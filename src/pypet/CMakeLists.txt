@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.30)
 project(pypet LANGUAGES CXX)
 
 if(${PROJECT_IS_TOP_LEVEL})
-    add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/../pet" "${CMAKE_CURRENT_BINARY_DIR}/src/pet")
+  add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/../pet" "${CMAKE_CURRENT_BINARY_DIR}/src/pet")
 endif()
 
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)

@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.30)
 
 project(cat LANGUAGES CXX)
 
+if(${PROJECT_IS_TOP_LEVEL})
+  add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/../pet" "${CMAKE_CURRENT_BINARY_DIR}/src/pet")
+endif()
+
 file(GLOB SRC "${CMAKE_CURRENT_LIST_DIR}/*.cpp")
 file(GLOB HDR "${CMAKE_CURRENT_LIST_DIR}/*.h")
 
