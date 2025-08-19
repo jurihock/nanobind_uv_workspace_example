@@ -1,3 +1,3 @@
 #!/bin/sh
 
-uv run --with invoke invoke "$@" || exit $?
+uv run --isolated --with invoke invoke "$@" || exit $?

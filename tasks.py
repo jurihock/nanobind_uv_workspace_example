@@ -48,8 +48,7 @@ def build(_):
 @task
 def serve(_):
 
-    with _.prefix(venv(_)):
-        _.run('uv run --with pypiserver pypi-server run -v -p 80 dist')
+    _.run('uv run --isolated --with pypiserver pypi-server run -v -p 80 dist')
 
 @task
 def test(_):
