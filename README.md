@@ -25,7 +25,7 @@ tasks.{bat,sh} sync
 tasks.{bat,sh} test
 ```
 
-Build `dist\*.whl` files:
+Build `dist/*.whl` files:
 
 ```
 tasks.{bat,sh} sync
@@ -34,13 +34,13 @@ tasks.{bat,sh} build
 
 ## Advanced usage
 
-Serve built `dist\*.whl` files:
+Serve built `dist/*.whl` files:
 
 ```
 tasks.{bat,sh} serve
 ```
 
-Use served `dist\*.whl` files:
+Use served `dist/*.whl` files:
 
 ```
 cd example
