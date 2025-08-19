@@ -14,22 +14,22 @@ This is a [nanobind](https://github.com/wjakob/nanobind) example project featuri
 
 * Both `uv sync --no-build-isolation` and `uv build --no-build-isolation` require preinstalled [build dependencies](https://docs.astral.sh/uv/reference/settings/#no-build-isolation).
 
-* See also `sync.{bat,sh}` and `build.{bat,sh}`.
+* See also `sync` and `build` in `tasks.py`.
 
 ## Basic usage
 
 Build and run `test.py` example:
 
 ```
-sync.{bat,sh}
-test.{bat,sh}
+tasks.{bat,sh} sync
+tasks.{bat,sh} test
 ```
 
 Build `dist\*.whl` files:
 
 ```
-sync.{bat,sh}
-build.{bat,sh}
+tasks.{bat,sh} sync
+tasks.{bat,sh} build
 ```
 
 ## Advanced usage
@@ -37,7 +37,7 @@ build.{bat,sh}
 Serve built `dist\*.whl` files:
 
 ```
-serve.{bat,sh}
+tasks.{bat,sh} serve
 ```
 
 Use served `dist\*.whl` files:
