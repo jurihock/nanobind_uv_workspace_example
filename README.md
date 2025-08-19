@@ -8,15 +8,13 @@ This is a [nanobind](https://github.com/wjakob/nanobind) example project featuri
 
 * Trigger rebuilding of C++ bindings on every `uv run` during development.
 
-## Gotchas
+## Caveats
 
-* `uv sync editable.rebuild=true` still creates a temporary environment for the build dependencies, which breaks the incremental build. This can be prevented by `uv sync --no-build-isolation`, but requires additional `.venv` manipulations.
+* Since nanobind depends on the [Python interpreter](https://nanobind.readthedocs.io/en/latest/building.html#preliminaries), build isolation must be disabled in editable mode.
 
-  Workaround: `sync.{bat,sh}`.
+* Both `uv sync --no-build-isolation` and `uv build --no-build-isolation` require preinstalled [build dependencies](https://docs.astral.sh/uv/reference/settings/#no-build-isolation).
 
-* `uv build` insistently creates an isolated build environment rather than reusing existing build artifacts. This can slow down large projects considerably. It also appears to fail with C++ dependencies in uv workspaces.
-
-  Workaround: `build.{bat,sh}`.
+* See also `sync.{bat,sh}` and `build.{bat,sh}`.
 
 ## Basic usage
 
