@@ -1,3 +1,3 @@
 @echo off
 
-uv run --isolated --with invoke invoke %* || exit /b
+uv run --isolated --no-project --with invoke invoke %* || exit /b

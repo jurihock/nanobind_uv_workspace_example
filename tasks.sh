@@ -1,3 +1,3 @@
 #!/bin/sh
 
-uv run --isolated --with invoke invoke "$@" || exit $?
+uv run --isolated --no-project --with invoke invoke "$@" || exit $?
