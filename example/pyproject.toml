@@ -2,20 +2,9 @@
 name = "nanobind_uv_workspace_example"
 version = "1"
 requires-python = ">=3.12"
-dependencies = [
-  "pycat",
-  "pydog",
-  "pypet",
-  "pypets"
-]
-
-[tool.uv.sources]
-pycat  = [{ index = "localhost" }]
-pydog  = [{ index = "localhost" }]
-pypet  = [{ index = "localhost" }]
-pypets = [{ index = "localhost" }]
+dependencies = ["pypets[cat,dog]"]
 
 [[tool.uv.index]]
 name = "localhost"
 url = "http://localhost/simple"
-explicit = true
+default = true

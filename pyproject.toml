@@ -2,7 +2,11 @@
 name = "pypets"
 version = "1"
 requires-python = ">=3.12"
-dependencies = ["pycat", "pydog", "pypet"]
+dependencies = ["pypet"]
+
+[project.optional-dependencies]
+cat = ["pycat"]
+dog = ["pydog"]
 
 [tool.uv.sources]
 pypet = { workspace = true }

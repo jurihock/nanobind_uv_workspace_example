@@ -37,7 +37,7 @@ def sync(_):
 
     with _.prefix(venv(_)):
         _.run('uv pip install ' + ' '.join(f'"{r}"' for r in requirements))
-        _.run('uv sync --verbose --no-build-isolation --refresh --inexact --config-settings=editable.rebuild=true')
+        _.run('uv sync --verbose --no-build-isolation --all-packages --refresh --inexact --config-settings=editable.rebuild=true')
 
 @task(sync)
 def build(_):
